@@ -52,7 +52,7 @@ The business was experiencing persistent operational disruption across its deliv
 ![Customer Insights](assets/Customer%20Insights.png)
 
 ### 4. Risk and Forecasting
-![Risk and Forecasting](assets/Risk%20and%20Forecasting.png)
+![Risk and Forecasting](assets/Risk%20And%20Forecasting.png)
 
 ### 5. Root Cause of Delays
 ![Root Cause of Delays](assets/Root%20Cause%20Of%20Delays.png)
