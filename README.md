@@ -1,69 +1,69 @@
-This project provides a comprehensive end-to-end analytics solution for a global logistics provider. By integrating sensor data, traffic reports, and financial metrics, the dashboard enables stakeholders to identify bottlenecks, mitigate environmental risks, and protect high-value revenue.
+# Smart Logistics Supply Chain Optimization
 
-# Business Problem 📍
-The logistics operation was struggling with 350 recorded delays across 1,000 total trips, leading to an average critical wait time of 52.10 minutes—significantly exceeding the target threshold of 45 minutes. Without a unified reporting system, the management could not identify whether delays were caused by mechanical failures, traffic, or environmental factors. This lack of visibility directly threatened $299K in annual revenue and led to a "Restock Needed" status for 26.1% of inventory segments.
+This project uses Power BI and SQL-based analysis to monitor and improve logistics performance across fleet operations, customer service, and inventory health. The dashboard highlights delays, delay drivers, and revenue-at-risk while surfacing asset and shipment inefficiencies in a single decision-support view.
 
-# Methodology ⛮
-I implemented a robust data lifecycle to move from raw data to actionable insights:
+## Executive Summary
 
-1. Data Engineering (SQL): Developed a suite of SQL Views in SSMS to clean, standardize timestamps, and aggregate performance metrics before ingestion.
+- Total trips: 1,000
+- Revenue: $299K
+- Logistic delays: 350
+- High-value delays: 114
+- Average critical wait time: 52.10 minutes
+- Inventory coverage: 1.5
+- Asset utilization: 80.49%
+- Average customer spend: $305.1 vs. target $320.0
 
-2. Star Schema Modeling: Architected a high-performance data model in Power BI, connecting a central Fact table (vw_StandardizedData) to multiple dimension tables for Assets, Delays, and a custom Calendar table to support time-intelligence.
+## Business Problem
 
-3. Diagnostic Analytics: Integrated a Decomposition Tree for root cause analysis, allowing users to drill down from total delays into specific shifts, traffic conditions, and asset IDs.
+The business was experiencing persistent operational disruption across its delivery network. With 350 delay events recorded across 1,000 trips, the operation was losing time, revenue, and customer trust. Delays were driven by a mix of traffic, weather, and mechanical issues, creating a need for a more actionable and unified performance dashboard.
 
-4. UX-Driven Design: Developed a multi-page dashboard with custom tooltip pages and conditional formatting to highlight critical KPIs like Inventory Coverage (1.5) and Asset Utilization (80.49%).
+## What This Dashboard Covers
 
-# Skills Used 🛠️
+- Executive performance overview with high-level KPI monitoring
+- Operational efficiency analysis by shift, asset, and traffic condition
+- Customer insights focused on purchase frequency and spend behavior
+- Risk and forecasting for inventory coverage and operational exposure
+- Root cause analysis of delay drivers and asset-level bottlenecks
 
-- SQL Server: View creation, data standardization, and complex aggregations.
+## Repository Contents
 
-- Power BI Desktop: Advanced data visualization, Report Page Tooltips, and Decomposition Trees.
+- `smart_logistics_dataset.csv` — source logistics dataset
+- `SQLQuery1.sql`, `SQLQuery1a.sql`, `SQLQuery2.sql` — SQL preparation and analytics queries
+- `SmartLogistics Executive Overview.pbix` — Power BI report file
+- `assets/` — dashboard screenshots for GitHub preview
 
-- DAX (Data Analysis Expressions): Calculated measures for running totals, Target vs. Actual variances, and conditional alerts.
+## Key Findings
 
-- Data Modeling: Star Schema architecture, relationship management, and cross-filter optimization.
+- Weather is the primary reason for delays, followed by traffic and mechanical failure.
+- Customers with purchase frequency 9 generate the highest revenue, but also generate the most delivery friction.
+- Priority assets such as Truck_3 and Truck_7 are recurring sources of critical delay events.
+- Inventory remains largely healthy, but a meaningful portion still falls into a restock-needed state.
+- Customer spend is trending below target, while high-value delay cases remain a strategic risk area.
 
-- Business Intelligence: KPI development, trend analysis, and root cause diagnostics.
+## Dashboard Preview
 
-# Results 📊 
+### 1. Executive Summary
+![Executive Summary](assets/Executive%20Summary.png)
 
-1. Root Cause Identification: Identified that Weather (267 incidents) is the leading driver of delays, followed closely by Traffic (236) and Mechanical Failures (234).
+### 2. Operational Efficiency
+![Operational Efficiency](assets/Operational%20Efficiency.png)
 
-2. High-Value Customer Protection: Uncovered that customers with a purchase frequency of 9 generate the highest revenue ($34K), yet face significant delivery friction.
+### 3. Customer Insights
+![Customer Insights](assets/Customer%20Insights.png)
 
-3. Operational Benchmarking: Established that "Truck_3" and "Truck_7" are the most critical liabilities, together accounting for nearly 10% of all critical delays.
+### 4. Risk and Forecasting
+![Risk and Forecasting](assets/Risk%20and%20Forecasting.png)
 
-4. Inventory Optimization: Successfully mapped the "Sufficient Stock" (73.9%) vs. "Restock Needed" (26.1%) segments to prevent future supply chain gaps.
+### 5. Root Cause of Delays
+![Root Cause of Delays](assets/Root%20Cause%20Of%20Delays.png)
 
-# Business Recommendations 💡 
+### 6. Tooltip View
+![Tooltip View](assets/Tooltip.png)
 
-- Asset Retirement/Overhaul: Immediately pull Truck_3 and Truck_7 from the fleet for mechanical inspection, as they lead the "Assets Causing Most Critical Delays" list.
+## Recommended Actions
 
-- Weather-Resilient Planning: Since Weather is the #1 delay factor, implement a predictive "Weather Delay" buffer for routes scheduled during high-humidity windows (currently averaging 65%).
+- Prioritize asset inspection and maintenance for the worst-performing vehicles.
+- Add weather-based contingency planning for high-risk operational windows.
+- Focus customer retention and service recovery on the highest-value purchase-frequency cohorts.
+- Continue monitoring inventory thresholds to avoid service disruption during peak demand periods.
 
-- Revenue Safeguarding: Prioritize shipments for the "Frequency 9" group. These customers provide peak revenue but are currently suffering from inconsistent delivery performance.
-
-- Shift Realignment: While Day Shifts generate higher total utilization, Night Shifts show a higher revenue-per-trip efficiency. Optimizing Night Shift staffing could close the $14.89 gap in average customer spend targets.
-
-# Dashboard Preview 
-
-1. Executive Overview
-<p align="center"> <img src= "https://github.com/kaushalpadole/Smart-Logistics/blob/master/assets/Executive%20Overview.png?raw=true" width="900"> </p>
-
-
-2. Operational Efficiency
-<p align="center"> <img src= "https://github.com/kaushalpadole/Smart-Logistics/blob/master/assets/Operational%20Efficiency.png?raw=true" width="900"> </p>
-   
-3. Customer Insights
-<p align="center"> <img src= "https://github.com/kaushalpadole/Smart-Logistics/blob/master/assets/Customer%20Insights.png?raw=true" width="900"> </p>
-   
-4. Risk And Forecasting
-<p align="center"> <img src= "https://github.com/kaushalpadole/Smart-Logistics/blob/master/assets/Risk%20And%20Forecasting.png?raw=true" width="900"> </p>
-   
-5. Root Cause Analysis Of Delays
-<p align="center"> <img src= "https://github.com/kaushalpadole/Smart-Logistics/blob/master/assets/Decomposition%20Tree.png?raw=true" width="900"> </p>
-
-6. Tooltip - High Value Delays
-<p align="center"> <img src= "https://github.com/kaushalpadole/Smart-Logistics/blob/master/assets/Tooltip%20High%20Value.png?raw=true" width="900"> </p>
-  
